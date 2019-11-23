@@ -54,10 +54,12 @@ function inserirTr(maquina){
         let th = document.createElement('th');
         let rm = document.createElement('button');
         let conf = document.createElement('button');
-        rm.setAttribute('type', "submit");
+        rm.setAttribute('type', "button");
+        rm.setAttribute("id", maquina.id);
         rm.setAttribute('onclick', "deletarDisp()");
         rm.innerHTML = '<i class="fas fa-trash-alt"></i>';
-        conf.setAttribute('type', "submit");
+        conf.setAttribute('type', "button");
+        conf.setAttribute("id", maquina.id);
         conf.setAttribute('onclick', "confDisp()");
         conf.innerHTML = '<i class="fas fa-cogs"></i>';
         th.setAttribute('scope', "row");
@@ -71,7 +73,8 @@ function inserirTr(maquina){
 
 function deletarDisp(){
     event.preventDefault();
-    let id = event.target.id;  
+    let id = event.target.id;
+    console.log(id)  
     dispositivos.remover(id).then(event.target.parentNode.remove());
 
 }
