@@ -52,13 +52,11 @@ function adicionarDispositivo(){
 function inserirTr(maquina){
         let tr = document.createElement('tr');
         let th = document.createElement('th');
-        let rm = document.createElement('a');
-        let conf = document.createElement('a');
-        rm.setAttribute('href', "#")
-        rm.setAttribute('class', "icon");
+        let rm = document.createElement('button');
+        let conf = document.createElement('button');
+        rm.setAttribute('type', "submit")
         rm.innerHTML = '<i class="fas fa-trash-alt"></i>';
-        conf.setAttribute('href', "#");
-        conf.setAttribute('class', "icon");
+        conf.setAttribute('type', "submit");
         conf.innerHTML = '<i class="fas fa-cogs"></i>';
         th.setAttribute('scope', "row");
         tr.appendChild(th);
