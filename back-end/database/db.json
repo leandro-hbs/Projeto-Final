@@ -1,0 +1,76 @@
+{
+  "dispositivos": [
+    {
+      "id": 1,
+      "nome": "S0",
+      "dispositivo": "Switch",
+      "ip": "---"
+    },
+    {
+      "id": 2,
+      "nome": "R0",
+      "dispositivo": "Roteador",
+      "ip": "192.168.1.1"
+    },
+    {
+      "id": 3,
+      "nome": "R1",
+      "dispositivo": "Roteador",
+      "ip": "192.168.1.2"
+    },
+    {
+      "nome": "a",
+      "dispositivo": "router",
+      "ip": "192.168.33.5",
+      "id": 5
+    },
+    {
+      "nome": "bob",
+      "dispositivo": "switch",
+      "ip": "192.168.33.9",
+      "id": 6
+    },
+    {
+      "nome": "fffff",
+      "dispositivo": "Host",
+      "ip": "192.168.95.7",
+      "id": 7
+    },
+    {
+      "nome": "",
+      "dispositivo": "Roteador",
+      "ip": "",
+      "id": 8
+    },
+    {
+      "nome": "",
+      "dispositivo": "Host",
+      "ip": "",
+      "id": 9
+    },
+    {
+      "nome": "asd",
+      "dispositivo": "Roteador",
+      "ip": "asd",
+      "id": 10
+    },
+    {
+      "nome": "",
+      "dispositivo": "Roteador",
+      "ip": "",
+      "id": 11
+    },
+    {
+      "nome": "asgasdfgasg",
+      "dispositivo": "Roteador",
+      "ip": "asgasdg",
+      "id": 12
+    },
+    {
+      "nome": "asd",
+      "dispositivo": "Roteador",
+      "ip": "",
+      "id": 13
+    }
+  ]
+}

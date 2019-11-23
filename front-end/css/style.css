@@ -1,0 +1,21 @@
+body {
+    background-image: url(1.jpeg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+h1 {
+    color: white;
+    margin-top: 150px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;  
+}
+
+.dropright {
+    margin-top: 5px;
+    margin-left: 30px;
+}
+.navbar-inner{
+    color: red;
+}
