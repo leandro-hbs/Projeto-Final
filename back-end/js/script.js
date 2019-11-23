@@ -52,21 +52,19 @@ function adicionarDispositivo(){
 function inserirTr(maquina){
         let tr = document.createElement('tr');
         let th = document.createElement('th');
-        let botaorm = document.createElement('span');
-        let botaoconf = document.createElement('span');
-        botaorm.setAttribute('type', "button");
-        botaorm.setAttribute('onclick', "deletarDisp()");
-        botaorm.setAttribute('class', "btn btn-dark");
-        botaorm.innerHTML = "Remover";
-        botaoconf.setAttribute('type', "button");
-        botaoconf.setAttribute('onclick', "confDisp()");
-        botaoconf.setAttribute('class', "btn btn-dark");
-        botaoconf.innerHTML = "Configurar";
+        let rm = document.createElement('a');
+        let conf = document.createElement('a');
+        rm.setAttribute('href', "#")
+        rm.setAttribute('class', "icon");
+        rm.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        conf.setAttribute('href', "#");
+        conf.setAttribute('class', "icon");
+        conf.innerHTML = '<i class="fas fa-cogs"></i>';
         th.setAttribute('scope', "row");
         tr.appendChild(th);
         tr.innerHTML = "<th scope='col'>" + maquina.id + "</th>" + "<td>" + maquina.nome + "</td>" + "\n" + "<td>" + maquina.dispositivo + "</td>" + "\n" + "<td>" + maquina.ip + "</td>";
-        tr.appendChild(botaorm);
-        tr.appendChild(botaoconf);
+        tr.appendChild(conf);
+        tr.appendChild(rm);
         let areaDisp = document.querySelector("#area-disp");
         areaDisp.appendChild(tr);
 }

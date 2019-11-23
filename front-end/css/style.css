@@ -19,3 +19,13 @@ h1 {
 .navbar-inner{
     color: red;
 }
+
+.fa-trash-alt {
+    content: "\f1f8";
+    color: rgb(255, 255, 255);
+}
+
+.fa-cogs {
+    content: "\f2ed";
+    color: rgb(255, 255, 255);
+}
