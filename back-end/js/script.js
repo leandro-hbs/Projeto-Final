@@ -54,9 +54,11 @@ function inserirTr(maquina){
         let th = document.createElement('th');
         let rm = document.createElement('button');
         let conf = document.createElement('button');
-        rm.setAttribute('type', "submit")
+        rm.setAttribute('type', "submit");
+        rm.setAttribute('onclick', "deletarDisp()");
         rm.innerHTML = '<i class="fas fa-trash-alt"></i>';
         conf.setAttribute('type', "submit");
+        conf.setAttribute('onclick', "confDisp()");
         conf.innerHTML = '<i class="fas fa-cogs"></i>';
         th.setAttribute('scope', "row");
         tr.appendChild(th);
