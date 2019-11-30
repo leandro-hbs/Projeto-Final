@@ -38,7 +38,6 @@ class DispServico{
 
 }
 let dispositivos = new DispServico();
-const config = `../php/index.php?conf=${conf.value}&address=${address.value}&nome=${nome.value}&senha=${senha.value}`
 
 function adicionarDispositivo(){
     event.preventDefault();
@@ -88,6 +87,8 @@ function buscaDisp(){
     );
 }
 
+buscaDisp()
+
 function confDisp(){
     let id = event.target.parentNode.id;
     let conf = getElementById('comando').value;
@@ -97,6 +98,7 @@ function confDisp(){
                 let nome = disp.nome;
                 let ip = disp.ip;
                 let senha = disp.senha;
+                const config = `../php/index.php?conf=${conf.value}&address=${address.value}&nome=${nome.value}&senha=${senha.value}`;
                 fetch(config)
                     .then(res => res.json())
                 }
