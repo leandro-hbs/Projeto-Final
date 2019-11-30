@@ -72,11 +72,9 @@ function inserirTr(maquina){
 }
 
 function deletarDisp(){
-    event.preventDefault();
-    let id = event.target.id;
+    let id = event.target.parentNode.id;
     console.log(id)  
-    dispositivos.remover(id).then(event.target.parentNode.remove());
-
+    dispositivos.remover(id).then(event.target.remove());
 }
 
 function buscaDisp(){
