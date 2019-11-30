@@ -1,8 +1,9 @@
 class Disp{
-    constructor(nome, dispositivo, ip){
+    constructor(nome, dispositivo, ip, senha = ''){
         this.nome = nome;
         this.dispositivo = dispositivo;
         this.ip = ip;
+        this.senha = senha;
     }
 }
 
@@ -37,13 +38,15 @@ class DispServico{
 
 }
 let dispositivos = new DispServico();
+const config = `../php/index.php?conf=${conf.value}&address=${address.value}&nome=${nome.value}&senha=${senha.value}`
+
 function adicionarDispositivo(){
     event.preventDefault();
-    
     let nome = document.getElementById('nome').value;
     let dispositivo = document.getElementById('dispositivo').value;
     let ip = document.getElementById('ip').value;
-    let maquina = new Disp(nome, dispositivo, ip);
+    let senha = document.getElementById('senha').value;
+    let maquina = new Disp(nome, dispositivo, ip, senha);
     dispositivos.inserir(maquina).then(
     	maquina => inserirTr(maquina)
     );
@@ -77,7 +80,6 @@ function deletarDisp(){
 }
 
 function buscaDisp(){
-    
     dispositivos.listar().then(dispositivos => {
             for(let disp of dispositivos){
                 inserirTr(disp);
@@ -86,4 +88,19 @@ function buscaDisp(){
     );
 }
 
-buscaDisp()
+function confDisp(){
+    let id = event.target.parentNode.id;
+    let conf = getElementById('comando').value;
+    dispositivos.listar().then(dispositivos => {
+        for(let disp of dispositivos){
+            if (id == disp.id){
+                let nome = disp.nome;
+                let ip = disp.ip;
+                let senha = disp.senha;
+                fetch(config)
+                    .then(res => res.json())
+                }
+            }
+        }
+    );
+}
