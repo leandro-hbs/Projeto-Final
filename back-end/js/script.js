@@ -1,9 +1,10 @@
 class Disp{
-    constructor(nome, dispositivo, ip, senha = ''){
+    constructor(nome, dispositivo, ip, senha = '', protocolo = ''){
         this.nome = nome;
         this.dispositivo = dispositivo;
         this.ip = ip;
         this.senha = senha;
+        this.protocolo = protocolo;
     }
 }
 
@@ -45,7 +46,8 @@ function adicionarDispositivo(){
     let dispositivo = document.getElementById('dispositivo').value;
     let ip = document.getElementById('ip').value;
     let senha = document.getElementById('senha').value;
-    let maquina = new Disp(nome, dispositivo, ip, senha);
+    let protocolo = document.getElementById('protocolo').value;
+    let maquina = new Disp(nome, dispositivo, ip, senha, protocolo);
     dispositivos.inserir(maquina).then(
     	maquina => inserirTr(maquina)
     );
