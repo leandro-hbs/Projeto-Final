@@ -6,7 +6,7 @@ A aplicação xpto tem como objetivo a configuração automática dos protocolos
 
 **Ambiente:**
 
-Inicialmente os testes serão realizados em VMs integradas ao GNS3, este sendo adequado para utilização de imagens reais de dispositivos de rede.
+Inicialmente os testes serão realizados em VMs integradas ao VirtualBox, este sendo adequado para simular roteadores entre outros dispositivos de redes.
 
 **Funcionalidades**
 
