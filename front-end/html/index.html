@@ -15,8 +15,10 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <h1>Monitore sua Rede</h1>
+        <div class="col-10">
+            <h1>Monitore sua Rede <button type="button" data-toggle="modal" data-target="#modal-home" class="btn btn-dark">Adicionar Dispositivo</button></h1>
+            
+            
         </div>
     </div>
     <div class="row">
@@ -29,7 +31,7 @@
 			      <th scope="col">Dispositivo</th>
                   <th scope="col">Rede</th>
                   <th scope="col">Opções</th>
-			    </tr>
+                  </tr>
 			  </thead>
 			  <tbody id="area-disp">
 			  </tbody>
@@ -51,7 +53,11 @@
                 <div>
                     <label for="recipient-name" class="col-form-label">Nome:</label>
                     <input type="text" class="form-control" id="nome">
-                    <label for="recipient-name" class="col-form-label">Dispositivo:</label>
+                    <label for="exampleInputPassword1">Senha:</label>
+                    <input type="password" class="form-control" id="senha">
+                    
+                    <label for="recipient-name"
+                     class="col-form-label">Dispositivo:</label>
                     <select class="custom-select" id="dispositivo" aria-label="Example select with button addon">
                         <option selected value="Roteador">Roteador</option>
                         <option value="Switch">Switch</option>
