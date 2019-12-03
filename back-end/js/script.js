@@ -64,7 +64,7 @@ function inserirTr(maquina){
         rm.innerHTML = '<i class="fas fa-trash-alt"></i>';
         conf.setAttribute('type', "button");
         conf.setAttribute("id", maquina.id);
-        conf.setAttribute('onclick', "confDisp()");
+        conf.setAttribute('onclick', "pageConfig()");
         conf.innerHTML = '<i class="fas fa-cogs"></i>';
         th.setAttribute('scope', "row");
         tr.appendChild(th);
@@ -90,6 +90,10 @@ function buscaDisp(){
 }
 
 buscaDisp()
+
+function pageConfig(){
+    window.open('config.html')
+}
 
 function confDisp(){
     let id = event.target.parentNode.id;
