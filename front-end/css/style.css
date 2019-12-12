@@ -1,38 +1,27 @@
-body {
-    background-image: url(../imgs/1.jpeg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat; 
-}
-
 h1 {
-    color: white;
+    color: rgb(0, 0, 0);
     margin-top: 150px;
     font-family: 'Roboto', sans-serif;
     text-align: center;  
 }
 
-.dropright {
-    margin-top: 5px;
-    margin-left: 30px;
-}
-.navbar-inner{
-    color: red;
-}
-
 .fa-trash-alt {
     content: "\f1f8";
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .fa-cogs {
     content: "\f2ed";
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 button{
-    color:white;
-    background-color:#343a40;
-    border-color: #343a40;
+    color:rgb(0, 0, 0);
+    background-color:#ffffff;
+    border-color: #ffffff;
     border-style: solid;
+}
+
+thead{
+    background-color: #B0E0E6;
 }

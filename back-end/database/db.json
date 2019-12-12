@@ -25,28 +25,20 @@
       "id": 3
     },
     {
-      "nome": "my back hurts d++",
-      "dispositivo": "Roteador",
-      "ip": "192.168.33.5",
-      "senha": "kkkkj",
-      "id": 4,
-      "protocolo": ""
-    },
-    {
-      "nome": "asdf",
-      "dispositivo": "Roteador",
-      "ip": "asdf",
-      "senha": "sdaf",
-      "protocolo": "Eigrp",
-      "id": 5
-    },
-    {
       "nome": "Redes",
       "dispositivo": "Roteador",
       "ip": "192.168.52.3",
       "senha": "1505",
       "protocolo": "Rip",
       "id": 6
+    },
+    {
+      "nome": "DNS",
+      "dispositivo": "Host",
+      "ip": "192.168.4.3",
+      "senha": "1505",
+      "protocolo": "Rip",
+      "id": 7
     }
   ]
 }

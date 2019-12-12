@@ -12,5 +12,5 @@ Inicialmente os testes serão realizados em VMs integradas ao VirtualBox, este s
 
   1. Configurar automáticamente a rede com os protocolos disponíveis
   
-  2. Monitoramento da rede local
+  2. Monitoramento da rede local e dos dispositivos conectados
 
