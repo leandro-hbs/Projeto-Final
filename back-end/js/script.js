@@ -1,3 +1,12 @@
+class Disp{
+    constructor(nome, tipo, endereco, senha = ''){
+        this.nome = nome;
+        this.tipo = tipo;
+        this.endereco = endereco;
+        this.senha = senha;
+    }
+}
+
 function buscaDisp() {
     fetch("http://localhost:8080/back-end/php/index.php")
       .then(res => res.json())
@@ -30,6 +39,18 @@ function inserirDisp(disp){
 }
 
 buscaDisp()
+
+function adicionarDispositivo(){
+    event.preventDefault();
+    let nome = document.getElementById('nome').value;
+    let tipo = document.getElementById('dispositivo').value;
+    let endereco = document.getElementById('ip').value;
+    let senha = document.getElementById('senha').value;
+    let maquina = new Disp(nome, tipo, endereco, senha);
+    //fetch("http://localhost:8080/back-end/php/insere.php?maquina=${maquina}")
+    //    .then(res => res.json())
+    //    .then(json => inserirDisp(json));
+}
 
 function pageConfig(){
     window.open('config.html')
