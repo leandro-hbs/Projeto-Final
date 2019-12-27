@@ -35,7 +35,7 @@ function inserirDisp(disp){
             <i class="fas fa-trash-alt"></i>
         </button>
     </tr>`;
-    areaDisp.innerHTML = rows;
+    areaDisp.innerHTML += rows;
 }
 
 buscaDisp()
