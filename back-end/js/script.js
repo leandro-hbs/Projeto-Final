@@ -1,14 +1,5 @@
-class Disp{
-    constructor(nome, tipo, endereco, senha = ''){
-        this.nome = nome;
-        this.tipo = tipo;
-        this.endereco = endereco;
-        this.senha = senha;
-    }
-}
-
 function buscaDisp() {
-    fetch("http://localhost:8080/back-end/php/index.php")
+    fetch("http://localhost:8080/back-end/php/recebe.php")
       .then(res => res.json())
       .then(json => inserir(json));
 }
@@ -20,6 +11,7 @@ function inserir(dispositivos){
 }
 
 function inserirDisp(disp){
+    console.log(disp)
     let areaDisp = document.querySelector("#area-disp");
     let rows = "";
     rows += `<tr>
@@ -46,10 +38,15 @@ function adicionarDispositivo(){
     let tipo = document.getElementById('dispositivo').value;
     let endereco = document.getElementById('ip').value;
     let senha = document.getElementById('senha').value;
-    let maquina = new Disp(nome, tipo, endereco, senha);
-    //fetch("http://localhost:8080/back-end/php/insere.php?maquina=${maquina}")
-    //    .then(res => res.json())
-    //    .then(json => inserirDisp(json));
+    fetch(`http://localhost:8080/back-end/php/insere.php?nome=${nome}&tipo=${tipo}&endereco=${endereco}&senha=${senha}`)
+        .then(res => res.json())
+        .then(json => inserirDisp(json[0]));
+}
+
+function deletaDisp(){
+    let id = event.target.parentNode.id;
+    fetch(`http://localhost:8080/back-end/php/deleta.php?id=${id}`)
+        .then(event.target.parentNode.parentNode.parentNode.remove());
 }
 
 function pageConfig(){

@@ -1,5 +1,10 @@
 <?php
-require_once('config.php');
+
+const DB = 'mysql';
+const DBSENHA = 'root';
+const DBNOME = 'dispositivos';
+const DBUSER = 'admin';
+const DBPWD = 'admin';
 
 function connect(){
   $dsn = DB.":dbname=".DBNOME.";host=".DB;
@@ -9,17 +14,3 @@ function connect(){
     echo 'Connection failed: ' . $e->getMessage();
   }
 }
-
-$connection = connect();
-
-function readAll() {
-  global $connection;
-  $sql = "SELECT * FROM hosts";
-  $pdoStm = $connection->query($sql);
-  return $pdoStm ? $pdoStm->fetchAll(PDO::FETCH_ASSOC) : null;
-}
-
-
-header("Content-type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Origin: *");
-echo json_encode(readAll());
