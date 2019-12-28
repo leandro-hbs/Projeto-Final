@@ -11,7 +11,6 @@ function inserir(dispositivos){
 }
 
 function inserirDisp(disp){
-    console.log(disp)
     let areaDisp = document.querySelector("#area-disp");
     let rows = "";
     rows += `<tr>
