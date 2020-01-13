@@ -5,9 +5,9 @@ function verificaDisp() {
   $comando = "ping {$ip}";
   exec($comando, $saida, $retorno);
   if (count($saida)) {
-    print('A Máquina está online');
+    return 'A Máquina está online';
   } else {
-    print('A Máquina não está online');
+    return 'A Máquina não está online';
   }
 }
 
