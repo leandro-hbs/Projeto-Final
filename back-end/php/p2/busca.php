@@ -5,8 +5,8 @@ $connection = connect();
 
 function buscaDisp() {
   global $connection;
-  $id = $_GET['id'];
-  $sql = "SELECT * FROM hosts WHERE id == $id";
+  $id = 1;
+  $sql = "SELECT * FROM hosts WHERE id = $id";
   $pdoStm = $connection->query($sql);
   return $pdoStm ? $pdoStm->fetchAll(PDO::FETCH_ASSOC) : null;
 }

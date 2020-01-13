@@ -49,5 +49,5 @@ function deletaDisp(){
 }
 
 function pageConfig(){
-    window.open('index2.html')
+    window.open('config.html')
 }
