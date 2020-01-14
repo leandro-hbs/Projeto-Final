@@ -7,7 +7,6 @@ function verificaDisp() {
   $comando = ".././info.sh $nome $senha | telnet $ip";
   echo $comando;
   $result = shell_exec($comando);
-  echo $result;
   return $result;
 }
 
