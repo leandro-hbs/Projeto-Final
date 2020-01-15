@@ -1,9 +1,6 @@
 USE dispositivos;
-
 DELETE FROM hosts;
-
 CREATE hosts;
-
 CREATE TABLE hosts (
   id int(11) unsigned NOT NULL AUTO_INCREMENT,
   nome varchar(100) NOT NULL,
@@ -12,7 +9,6 @@ CREATE TABLE hosts (
   tipo varchar(100) NOT NULL,
   PRIMARY KEY (id)
 );
-
 INSERT INTO hosts VALUES (1, 'aluno', 'aluno', '127.16.0.70', 'Host');
 INSERT INTO hosts VALUES (2, 'S0', '*****', '-.-.-.-', 'Switch');
 INSERT INTO hosts VALUES (3, 'DNS', '*****', '200.10.10.10', 'Server');

@@ -4,8 +4,7 @@ function verificaDisp() {
   $ip = $_GET['ip'];
   $nome = $_GET['nome'];
   $senha = $_GET['senha'];
-  $comando = ".././info.sh $nome $senha | telnet $ip";
-  echo $comando;
+  $comando = "(sleep 1; echo 'ls -la'; sleep 1) | sshpass -p "."$senha"." ssh -o 'StrictHostKeyChecking no' $nome@$ip";
   $result = shell_exec($comando);
   return $result;
 }
