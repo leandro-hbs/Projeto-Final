@@ -1,7 +1,8 @@
-function buscaDisp() {
-  fetch("http://localhost:8080/back-end/php/p2/busca.php?id=1")
-    .then(res => res.json())
-    .then(json => informacoes(json));
+const id = 1;
+
+function buscaDisp(id) {
+  return fetch(`http://localhost:8080/back-end/php/p2/busca.php?id=${id}`)
+    .then(res => res.json());
 }
 
 function informacoes(dispositivo){
@@ -36,17 +37,17 @@ function inserirInfo(dados){
   infoDisp.innerHTML += rows;
 }
 
-buscaDisp()
+buscaDisp(id).then(disp => informacoes(disp));
 
 function Configurar(){
   event.preventDefault();
   let comando = document.getElementById('comando').value;
-  fetch(`http://localhost:8080/back-end/php/p2/configura.php?comando=${comando}`)
-      .then(res => res.json())
-      .then(json => saida(json));
+  buscaDisp(id).then(disp => saida(disp, comando));
 }
 
-function saida(texto){
+function saida(dispositivo, comando){
   let saida = document.querySelector("#saida");
-  saida.innerHTML = texto;
+  fetch(`http://localhost:8080/back-end/php/p2/configura.php?ip=${dispositivo[0].endereco}&nome=${dispositivo[0].nome}&senha=${dispositivo[0].senha}&comando=${comando}`)
+    .then(res => res.json())
+    .then(json => saida.innerHTML = json);
 }
