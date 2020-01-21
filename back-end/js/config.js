@@ -45,26 +45,27 @@ function InfoHost(dados){
   infoDisp.innerHTML += rows;
   rows = ""
   rows += `<tr>
+  <td>Update</td>
+  <td>
+  <button type="button" onclick="atualiza()" class="btn" style="background-color: #B0E0E6;">Atualizar</button>
+  </td>
+  </tr>
+  <tr>
+  <tr>
   <td>Telnet</td>
   <td>
-  <button type="button" class="btn" style="background-color: #B0E0E6;">Cliente</button>
-  <button type="button" class="btn" style="background-color: #B0E0E6;">Servidor</button>
+  <button type="button" onclick="client_t()" class="btn" style="background-color: #B0E0E6;">Cliente</button>
+  <button type="button" type="button" data-toggle="modal" data-target="#modal-telnet" class="btn" style="background-color: #B0E0E6;">Servidor</button>
   </td>
   </tr>
   <tr>
   <td>SSH</td>
   <td>
-  <button type="button" class="btn" style="background-color: #B0E0E6;">Cliente</button>
-  <button type="button" class="btn" style="background-color: #B0E0E6;">Servidor</button>
+  <button type="button" onclick="client_s()" class="btn" style="background-color: #B0E0E6;">Cliente</button>
+  <button type="button" type="button" data-toggle="modal" data-target="#modal-SSH" class="btn" style="background-color: #B0E0E6;">Servidor</button>
   </td>
   </tr>
-  <tr>
-  <td>FTP</td>
-  <td>
-  <button type="button" class="btn" style="background-color: #B0E0E6;">Cliente</button>
-  <button type="button" class="btn" style="background-color: #B0E0E6;">Servidor</button>
-  </td>
-  </tr>`
+  <tr>`
   confDisp.innerHTML += rows;
 }
 
@@ -124,4 +125,67 @@ function saida(dispositivo, comando){
   fetch(`http://localhost:8080/back-end/php/p2/configura.php?ip=${dispositivo[0].endereco}&nome=${dispositivo[0].nome}&senha=${dispositivo[0].senha}&comando=${comando}`)
     .then(res => res.json())
     .then(json => saida.innerHTML = json);
+}
+
+function mostra(dado){
+  console.log(dado)
+}
+
+function atualiza(){
+  event.preventDefault();
+  buscaDisp(id).then(disp => Update(disp));
+}
+
+function Update(dispositivo){
+  fetch(`http://localhost:8080/back-end/php/host/update.php?ip=${dispositivo[0].endereco}&nome=${dispositivo[0].nome}&senha=${dispositivo[0].senha}`)
+      .then(res => res.json())
+      .then(json => mostra(json));
+}
+
+function telnet(){
+  event.preventDefault();
+  let allow = document.getElementById('allow').value;
+  let deny = document.getElementById('deny').value;
+  buscaDisp(id).then(disp => configurarTelnet(disp, allow, deny));
+}
+
+function configurarTelnet(dispositivo, allow, deny){
+  fetch(`http://localhost:8080/back-end/php/host/telnet.php?ip=${dispositivo[0].endereco}&nome=${dispositivo[0].nome}&senha=${dispositivo[0].senha}&allow=${allow}&deny=${deny}`)
+      .then(res => res.json())
+      .then(json => mostra(json));
+}
+
+function SSH(){
+  event.preventDefault();
+  let port = document.getElementById('port').value;
+  let root = document.getElementById('root').value;
+  buscaDisp(id).then(disp => configurarSSH(disp, port, root));
+}
+
+function configurarSSH(dispositivo, port, root){
+  fetch(`http://localhost:8080/back-end/php/host/SSH.php?ip=${dispositivo[0].endereco}&nome=${dispositivo[0].nome}&senha=${dispositivo[0].senha}&port=${port}&root=${root}`)
+    .then(res => res.json())
+    .then(json => mostra(json));
+}
+
+function client_s(){
+  event.preventDefault();
+  buscaDisp(id).then(disp => cliente_ssh(disp));
+}
+
+function cliente_ssh(dispositivo){
+  fetch(`http://localhost:8080/back-end/php/host/clientS.php?ip=${dispositivo[0].endereco}&nome=${dispositivo[0].nome}&senha=${dispositivo[0].senha}`)
+    .then(res => res.json())
+    .then(json => mostra(json));
+}
+
+function client_t(){
+  event.preventDefault();
+  buscaDisp(id).then(disp => cliente_telnet(disp));
+}
+
+function cliente_telnet(dispositivo){
+  fetch(`http://localhost:8080/back-end/php/host/clientT.php?ip=${dispositivo[0].endereco}&nome=${dispositivo[0].nome}&senha=${dispositivo[0].senha}`)
+    .then(res => res.json())
+    .then(json => mostra(json));
 }
