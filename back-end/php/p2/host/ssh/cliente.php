@@ -4,7 +4,7 @@ $ip = $_GET['ip'];
 $nome = $_GET['nome'];
 $senha = $_GET['senha'];
 $conexao = "sshpass -p "."$senha"." ssh -o 'StrictHostKeyChecking no' $nome@$ip";
-$instala = "(sleep 1; echo 'su -'; sleep 1; echo 'root'; sleep 1; echo 'apt-get install openssh-client'; sleep 5;) | ";
+$instala = "(sleep 1; echo 'su -'; sleep 1; echo 'root'; sleep 1; echo 'apt-get install openssh-client'; sleep 5; echo 'systemctl start sshd'; sleep 1) | ";
 $comando = $instala.$conexao;
 $result = shell_exec($comando);
 

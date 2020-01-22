@@ -19,7 +19,7 @@ function inserirDisp(disp){
     <td>${disp.tipo}</td>
     <td>${disp.endereco}</td>
     <td>
-        <button type="button" id='${disp.id}' onclick='pageConfig()'>
+        <button type="button" id='${disp.id}' onclick='pageConfig(${disp.id})'>
             <i class="fas fa-cogs"></i>
         </button>
         <button type="button" id='${disp.id}' onclick='deletaDisp()'>
@@ -28,8 +28,6 @@ function inserirDisp(disp){
     </tr>`;
     areaDisp.innerHTML += rows;
 }
-
-buscaDisp()
 
 function adicionarDispositivo(){
     event.preventDefault();
@@ -48,6 +46,8 @@ function deletaDisp(){
         .then(event.target.parentNode.parentNode.parentNode.remove());
 }
 
-function pageConfig(){
-    window.open('config.html')
+function pageConfig(id){
+    window.open(`config.html?id=${id}`)
 }
+
+buscaDisp()
