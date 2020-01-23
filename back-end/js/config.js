@@ -23,7 +23,7 @@ class Montar{
         .then(json => this.InfoHost(json));
     }
 
-    if (dispositivo[0].tipo == 'Roteador'){
+    if (dispositivo[0].tipo == 'Router'){
       let titulo = document.querySelector("#titulo");
       titulo.innerHTML = 'Configure seu Roteador';
       fetch(this.url + `router.php?ip=${this.endereco}&nome=${this.nome}&senha=${this.senha}`)
