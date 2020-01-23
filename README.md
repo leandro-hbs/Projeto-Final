@@ -18,6 +18,6 @@ Inicialmente os testes serão realizados em VMs integradas ao VirtualBox, este s
 
 A primeira página tem as seguintes caracteristicas:
 
-  ![alt text](https://raw.githubusercontent.com/leandro-hbs/projeto-final/imagens/p1.png)
+  ![página 1](imagens/p2.png)
 
 
