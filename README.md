@@ -22,7 +22,7 @@ A primeira página tem as seguintes caracteristicas:
 
 Nesta página são mostrados os dispositivos que foram adicionados ao banco de dados representando as máquinas conectadas a rede.
 
-Mais máquinas podem ser adicionadas através do botão abaixo da tabela, abrindo o modal:
+Mais máquinas podem ser adicionadas através do botão abaixo da tabela, abrindo locais para o preenchimento dos dados do dispositivo:
 
 ![adiciona](imagens/adddisp.png)
 
