@@ -2,7 +2,7 @@
 
 **Descrição:**
 
-A aplicação xpto tem como objetivo a configuração automática dos servidores mais usuais em máquinas linux e dos protocolos de roteamento nos dispositivos de rede em sua rede local.
+A aplicação ANC (Automatic Network Configuration) tem como objetivo a configuração automática dos servidores mais usuais em máquinas linux e dos protocolos de roteamento nos dispositivos de rede em sua rede local.
 
 **Ambiente:**
 

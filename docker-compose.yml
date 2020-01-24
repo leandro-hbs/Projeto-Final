@@ -5,7 +5,7 @@ services:
   web:
     container_name: web
     image: ifpb/php:7.3-apache-ping
-    build: ./docker
+    build: .
     ports:
       - 8080:80
     volumes:
