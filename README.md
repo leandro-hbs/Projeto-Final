@@ -40,8 +40,6 @@ Aqui você pode definir qual ip será permitido e qual será proibido.
 
 Após clicar em configurar, a configuração será executada e um alerta será exibido na tela mostrando a saída dos comandos (o mesmo para todas as outras configurações).
 
-![alerta](images/alerta.png)
-
 **Requesitos**
 
 Você precisará permitir o acesso aos dispositivos que deseja configurar, pois os mesmos serão acessados via SSH.
