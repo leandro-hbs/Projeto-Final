@@ -1,4 +1,4 @@
-# Configuracao automática de protocolos
+# Configuração automática de protocolos
 
 **Descrição:**
 
